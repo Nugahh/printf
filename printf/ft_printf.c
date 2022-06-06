@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 18:43:09 by fwong             #+#    #+#             */
-/*   Updated: 2022/06/05 19:46:21 by fwong            ###   ########.fr       */
+/*   Updated: 2022/06/06 20:17:01 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_fonction(char c, va_list args)
 	else if (c == 's')
 		return	(ft_putstr(args));
 	else if (c == 'p')
-		return	(ft_pointeur(args));
+		return	(ft_pointer(args));
 	else if (c == 'd')
 		return	(ft_integer(args));
 	else if (c == 'i')
@@ -36,11 +36,11 @@ int	ft_fonction(char c, va_list args)
 	else if (c == 'u')
 		return	(ft_unsignedint(args));
 	else if (c == 'x')
-		return	(ft_hexamin(args));
+		return	(ft_hexa_min(args));
 	else if (c == 'X')
-		return	(ft_hexamaj(args));
+		return	(ft_hexa_maj(args));
 	else if (c == '%')
-		return	(ft_pourcentage(args));
+		return	(write(1, "%", 1));
 }
 
 int	ft_printf(const char *str, ...)
@@ -53,7 +53,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	i = 0;
 	len = 0;
-	while (str[i])
+	while (str[i]) 
 	{
 		if (str[i] == '%' && str[i + 1] && ft_check(str[i + 1]) == 1)
 		{
