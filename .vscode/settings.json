@@ -1,5 +1,8 @@
 {
 	"files.associations": {
-		"stdarg.h": "c"
+		"stdarg.h": "c",
+		"printf.h": "c",
+		"libft.h": "c",
+		"ft_printf.h": "c"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:34:20 by fwong             #+#    #+#             */
-/*   Updated: 2022/06/07 19:44:41 by fwong            ###   ########.fr       */
+/*   Updated: 2022/06/07 21:43:09 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 
 void	ft_putunsignednbr(unsigned int n)
 {
-	unsigned int	a;
+	unsigned long long int	nb;
 
-	if (n > 0 && n <= 9)
+	nb = n;
+	if (nb > 9)
 	{
-		a = '0' + n;
-		write(1, &a, 1);
+		ft_putunsignednbr(nb / 10);
+		ft_putunsignednbr(nb % 10);
 	}
 	else
-	{
-		ft_putunsignednbr(n / 10);
-		ft_putunsignednbr(n % 10);
-	}
+		ft_putchar_fd(nb + 48, 1);
 }
 
 int	ft_unsignedintlen(unsigned int k)

@@ -6,7 +6,7 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 18:43:09 by fwong             #+#    #+#             */
-/*   Updated: 2022/06/07 19:44:30 by fwong            ###   ########.fr       */
+/*   Updated: 2022/06/07 22:14:09 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ int	ft_fonction(char c, va_list args)
 		len += ft_putstr(args);
 	else if (c == 'p')
 		len += ft_pointer(args);
-	else if (c == 'd')
-		len += ft_integer(args);
-	else if (c == 'i')
+	else if (c == 'd' || c = 'i')
 		len += ft_integer(args);
 	else if (c == 'u')
 		len += ft_unsignedint(args);
