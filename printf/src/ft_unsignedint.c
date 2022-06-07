@@ -6,30 +6,29 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:34:20 by fwong             #+#    #+#             */
-/*   Updated: 2022/06/06 18:42:54 by fwong            ###   ########.fr       */
+/*   Updated: 2022/06/07 19:44:41 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdarg.h>
+#include "ft_printf.h"
 
 void	ft_putunsignednbr(unsigned int n)
 {
-		unsigned int a;
+	unsigned int	a;
 
-		if (n >= 0 && n <= 9)
-		{
-			a = '0' + n;
-			write(1, &a, 1);
-		}
-		else
-		{
-			ft_putunsignednbr(n / 10);
-			ft_putunsignednbr(n % 10);
-		}
+	if (n > 0 && n <= 9)
+	{
+		a = '0' + n;
+		write(1, &a, 1);
+	}
+	else
+	{
+		ft_putunsignednbr(n / 10);
+		ft_putunsignednbr(n % 10);
+	}
 }
 
-int	ft_intlen(unsigned int k)
+int	ft_unsignedintlen(unsigned int k)
 {
 	unsigned int	i;
 
@@ -48,6 +47,5 @@ int	ft_unsignedint(va_list args)
 
 	num = (unsigned int)va_arg(args, unsigned int);
 	ft_putunsignednbr(num);
-
 	return (ft_intlen(num));
 }

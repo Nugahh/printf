@@ -6,19 +6,17 @@
 #    By: fwong <fwong@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:53:23 by fwong             #+#    #+#              #
-#    Updated: 2022/06/04 21:13:29 by fwong            ###   ########.fr        #
+#    Updated: 2022/06/07 17:43:11 by fwong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libftprintf.a
 
-SRCS	= 
+SRCS	= src/ft_hexa_maj.c src/ft_hexa_min.c src/ft_integer.c src/ft_pointer.c\
+		src/ft_putchar.c src/ft_putstr.c src/ft_unsignedint.c src/ft_printf.c\
+		src/ft_percent.c\
 
 OBJS	= ${SRCS:.c=.o}
-
-BONUS = 
-
-Bonus_OBJS = ${BONUS:.c=.o}
 
 CC	= gcc
 
@@ -30,6 +28,12 @@ all: ${NAME}
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
+	make -C libft
+	
+	cp libft/libft.a .
+
+	mv libft.a ${NAME}
+	
 	ar rcs ${NAME} ${OBJS}
 
 bonus:	${Bonus_OBJS}
