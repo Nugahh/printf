@@ -6,21 +6,21 @@
 #    By: fwong <fwong@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 15:53:23 by fwong             #+#    #+#              #
-#    Updated: 2022/06/07 21:31:40 by fwong            ###   ########.fr        #
+#    Updated: 2022/06/10 15:25:33 by fwong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libftprintf.a
 
 SRCS	= src/ft_hexa_maj.c src/ft_hexa_min.c src/ft_integer.c src/ft_pointer.c\
-		src/ft_putchar.c src/ft_putstr.c src/ft_unsignedint.c src/ft_printf.c\
-		src/ft_percent.c src/main.c
+		src/ft_putchar.c src/ft_putstr.c src/ft_unsignedint.c ft_printf.c\
+		src/ft_percent.c\
 
 OBJS	= ${SRCS:.c=.o}
 
 CC	= gcc
 
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra -I./includes
 
 all: ${NAME}
 
