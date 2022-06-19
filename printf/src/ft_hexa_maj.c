@@ -6,23 +6,11 @@
 /*   By: fwong <fwong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 19:52:00 by fwong             #+#    #+#             */
-/*   Updated: 2022/06/07 21:46:01 by fwong            ###   ########.fr       */
+/*   Updated: 2022/06/19 13:52:18 by fwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/* int	ft_hexalen(unsigned int nb)
-{
-	int	i;
-
-	while (nb != 0)
-	{
-		nb /= 16;
-		i++;
-	}
-	return (i);
-} */
 
 void	ft_putnbr_hexa_maj(unsigned int num)
 {
